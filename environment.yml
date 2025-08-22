@@ -1,0 +1,4 @@
+name: interpolate_test_env
+dependencies:
+  - scipy = 1.11.4
+  - pandas
