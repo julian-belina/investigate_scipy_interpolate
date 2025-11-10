@@ -3,8 +3,6 @@ on:
     branches: ["**"]
   # Allows to trigger the workflow manually
 
-  
-
 jobs:
   TestGeokitDevLocal:
     name: Test local development Version on ${{ matrix.os }}
@@ -12,12 +10,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          [
-            "ubuntu-latest",
-            "macos-latest",
-          ]
-        scipy_version: ["11.4","1.8.1"]
+        os: ["ubuntu-latest", "macos-latest"]
+        scipy_version: ["11.4", "1.8.1"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,5 +34,4 @@ jobs:
           conda list --name reskit_env
           echo "libaries printed"
           echo "start pytest"
-          conda run --name reskit_env min_test.py
-          
+          conda run --name reskit_env python min_test.py
