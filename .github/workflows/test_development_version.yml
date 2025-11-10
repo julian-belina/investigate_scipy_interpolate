@@ -27,10 +27,9 @@ jobs:
         run: |
           ls
           echo "LS Done"
-          mamba -n create --name reskit_env --yes scipy=${{ matrix.scipy_version }} pandas
-          # conda run --name reskit_env pip install . --no-deps
+          mamba create --name reskit_env scipy=${{ matrix.scipy_version }} pandas
           echo "Installation done"
-          conda list --name reskit_env
+          mamba list --name reskit_env
           echo "libaries printed"
           echo "start pytest"
-          conda run --name reskit_env python min_test.py
+          mamba run --name reskit_env python min_test.py
