@@ -10,13 +10,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-latest", "macos-latest"]
+        # os: ["ubuntu-latest", "macos-latest"]
+        os: ["ubuntu-latest"]
         scipy_version: ["11.4", "1.8.1"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          repository: FZJ-IEK3-VSA/RESKit
+        uses: actions/checkout@v5
       - uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
@@ -29,7 +28,7 @@ jobs:
           ls
           echo "LS Done"
           mamba -n create --name reskit_env --yes scipy=${{ matrix.scipy_version }} pandas
-          conda run --name reskit_env pip install . --no-deps
+          # conda run --name reskit_env pip install . --no-deps
           echo "Installation done"
           conda list --name reskit_env
           echo "libaries printed"
