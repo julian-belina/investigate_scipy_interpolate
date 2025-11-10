@@ -12,7 +12,7 @@ jobs:
       matrix:
         # os: ["ubuntu-latest", "macos-latest"]
         os: ["ubuntu-latest"]
-        scipy_version: ["11.4", "1.8.1"]
+        scipy_version: ["1.11.4", "1.8.1"]
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -27,7 +27,7 @@ jobs:
         run: |
           ls
           echo "LS Done"
-          mamba create --name reskit_env scipy=${{ matrix.scipy_version }} pandas
+          mamba create --name reskit_env scipy=${{ matrix.scipy_version }} pandas openpyxl
           echo "Installation done"
           mamba list --name reskit_env
           echo "libaries printed"
