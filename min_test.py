@@ -31,4 +31,5 @@ elec = griddata(
 )
 
 elec_test_array = np.genfromtxt(fname=current_dir.joinpath("elec.csv"), delimiter=",")
-assert np.allclose(a=elec, b=elec_test_array)
+np.testing.assert_allclose(actual=elec, desired=elec_test_array)
+# assert np.allclose(a=elec, b=elec_test_array)
