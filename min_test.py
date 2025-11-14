@@ -19,13 +19,15 @@ relative_humidity = np.genfromtxt(
 surface_air_temperature = np.genfromtxt(
     current_dir.joinpath("surface_air_temperature.csv"), delimiter=","
 )
+selected_slice = slice(50, 70)
 
 elec = griddata(
+    # points=(point_1_T_.loc[selected_slice], point_2_RH_.loc[selected_slice]),
     points=(point_1_T_, point_2_RH_),
-    values=total_electricity,
+    values=total_electricity.loc[selected_slice],
     xi=(
-        surface_air_temperature,
-        relative_humidity,
+        surface_air_temperature[selected_slice, :],
+        relative_humidity[selected_slice, :],
     ),
     method="linear",
 )
@@ -33,3 +35,4 @@ elec = griddata(
 elec_test_array = np.genfromtxt(fname=current_dir.joinpath("elec.csv"), delimiter=",")
 np.testing.assert_allclose(actual=elec, desired=elec_test_array)
 # assert np.allclose(a=elec, b=elec_test_array)
+print("")
