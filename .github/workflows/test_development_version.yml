@@ -69,5 +69,5 @@ jobs:
           mamba list --name reskit_env
           echo "libaries printed"
           echo "start pytest"
-          # mamba run --name reskit_env python min_test.py
-          mamba run --name reskit_env python test_scipy_example/test_scipy_example.py
+          mamba run --name reskit_env python min_test.py
+          # mamba run --name reskit_env python test_scipy_example/test_scipy_example.py

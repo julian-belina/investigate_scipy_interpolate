@@ -19,11 +19,11 @@ relative_humidity = np.genfromtxt(
 surface_air_temperature = np.genfromtxt(
     current_dir.joinpath("surface_air_temperature.csv"), delimiter=","
 )
-selected_slice = slice(50, 70)
+selected_slice = slice(0, 140)
 
 elec = griddata(
-    # points=(point_1_T_.loc[selected_slice], point_2_RH_.loc[selected_slice]),
-    points=(point_1_T_, point_2_RH_),
+    points=(point_1_T_.loc[selected_slice], point_2_RH_.loc[selected_slice]),
+    # points=(point_1_T_, point_2_RH_),
     values=total_electricity.loc[selected_slice],
     xi=(
         surface_air_temperature[selected_slice, :],

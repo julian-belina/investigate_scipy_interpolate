@@ -1,1 +1,1 @@
-# investigate_scipy_interpolate
+# Investigate scipy griddata inconsistencies
