@@ -11,8 +11,10 @@ def func(x, y):
 
 
 grid_x, grid_y = np.mgrid[0:1:100j, 0:1:200j]
-rng = np.random.default_rng()
+rng = np.random.default_rng(seed=100)
 points = rng.random((1000, 2))
+# # points = np.array(np.arange(0, 1, 0.001), np.arange(0, 1, 0.001))
+# points = np.array((np.arange(0, 1, 0.001), np.arange(1, 0, -0.001))).transpose()
 values = func(points[:, 0], points[:, 1])
 
 
