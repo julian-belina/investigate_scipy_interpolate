@@ -22,9 +22,9 @@ grid_z0 = griddata(points, values, (grid_x, grid_y), method="nearest")
 grid_z1 = griddata(points, values, (grid_x, grid_y), method="linear")
 grid_z2 = griddata(points, values, (grid_x, grid_y), method="cubic")
 
-np.savetxt(fname=test_data_path.joinpath("grid_z0.csv"), X=grid_z0, delimiter=",")
-np.savetxt(fname=test_data_path.joinpath("grid_z1.csv"), X=grid_z1, delimiter=",")
-np.savetxt(fname=test_data_path.joinpath("grid_z2.csv"), X=grid_z2, delimiter=",")
+# np.savetxt(fname=test_data_path.joinpath("grid_z0.csv"), X=grid_z0, delimiter=",")
+# np.savetxt(fname=test_data_path.joinpath("grid_z1.csv"), X=grid_z1, delimiter=",")
+# np.savetxt(fname=test_data_path.joinpath("grid_z2.csv"), X=grid_z2, delimiter=",")
 
 grid_z0_test = np.genfromtxt(
     fname=test_data_path.joinpath("grid_z0.csv"), delimiter=","
