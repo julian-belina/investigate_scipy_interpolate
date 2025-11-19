@@ -69,6 +69,7 @@ jobs:
           mamba list --name reskit_env
           echo "libaries printed"
           echo "start pytest"
-          mamba run --name reskit_env python test_linear_nd_Interpolator.py
+          mamba run --name reskit_env python test_regular_grid.py
+          # mamba run --name reskit_env python test_linear_nd_Interpolator.py
           # mamba run --name reskit_env python grid_data_os_inconsistency_test.py
           # mamba run --name reskit_env python test_scipy_example/test_scipy_example.py
