@@ -3,7 +3,7 @@ import pathlib
 import numpy as np
 import pandas as pd
 from scipy.interpolate import RegularGridInterpolator
-from matplotlib import pyplot
+#from matplotlib import pyplot
 
 current_dir = pathlib.Path(__file__).parent
 
@@ -46,21 +46,21 @@ elec_test_array = np.genfromtxt(fname=current_dir.joinpath("elec.csv"), delimite
 elec_RGI_test_array = np.genfromtxt(fname=current_dir.joinpath("elec_RGI.csv"), delimiter=",")
 
 #  %% Plotting 
-fig, axs = pyplot.subplots(nrows=1, ncols=1)
+# fig, axs = pyplot.subplots(nrows=1, ncols=1)
 
 
-axs.plot(
-    RGI_output,
-    "k--",
-)
-axs.plot(elec_test_array, "b", linewidth=0.5)
+# axs.plot(
+#     RGI_output,
+#     "k--",
+# )
+# axs.plot(elec_test_array, "b", linewidth=0.5)
 
 
-fig.show()
+# fig.show()
 
-perc_deviation = (elec_test_array - RGI_output) / elec_test_array * 100
-perc_deviation.mean() #-0.015562724915809874%
-perc_deviation.max() #0.6990781200055962%
+# perc_deviation = (elec_test_array - RGI_output) / elec_test_array * 100
+# perc_deviation.mean() #-0.015562724915809874%
+# perc_deviation.max() #0.6990781200055962%
 
 # %% Testing
 
