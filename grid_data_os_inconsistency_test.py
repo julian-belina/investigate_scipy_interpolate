@@ -30,6 +30,10 @@ elec = griddata(
     ),
     method="linear",
 )
+
+# points sind (x,y) punkte
+# Values sind f(x,y)
+# xi sind die stellen wo interpoliert wird
 # Compare interpolation data
 elec_test_array = np.genfromtxt(fname=current_dir.joinpath("elec.csv"), delimiter=",")
 np.testing.assert_allclose(actual=elec, desired=elec_test_array)
